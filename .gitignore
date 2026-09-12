@@ -1,0 +1,45 @@
+﻿# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# Virtual environments
+.venv/
+env/
+venv/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Node
+node_modules/
+dist/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Logs / temporary files
+*.log
+*.tmp
+
+# SQLite
+*.sqlite
+*.db
+*.sqlite3
+
+# Keep SkyGuard's populated prototype database
+!backend/
+!backend/database/
+!backend/database/skyguard.db
+
+# Evaluation-only model/artifacts
+database/evaluation_iforest.pkl
+
+# NOAA raw download/cache files
+backend/data/noaa_asos/*.dat

@@ -1,0 +1,157 @@
+{
+  "evaluation_title": "SkyGuard AI - Controlled Anomaly-Injection Evaluation",
+  "evaluation_type": "Controlled anomaly-injection evaluation",
+  "timestamp": "2026-09-09T18:48:32.457147",
+  "status": "completed",
+  "dataset_info": {
+    "total_observations": 1000,
+    "stations_evaluated": [
+      "AWS-001",
+      "AWS-002"
+    ],
+    "anomaly_records_count": 182,
+    "normal_records_count": 796,
+    "genuine_weather_records_count": 22
+  },
+  "runtime_performance": {
+    "total_evaluation_time_sec": 28.1,
+    "avg_detection_latency_ms": 28.096,
+    "throughput_obs_per_sec": 35.6
+  },
+  "primary_metrics": {
+    "true_positives": 87,
+    "false_positives": 243,
+    "true_negatives": 575,
+    "false_negatives": 95,
+    "precision_pct": 26.36,
+    "recall_pct": 47.8,
+    "f1_score_pct": 33.98,
+    "false_positive_rate_pct": 29.71,
+    "false_negative_rate_pct": 52.2,
+    "detection_rate_pct": 47.8
+  },
+  "anomaly_type_breakdown": {
+    "frozen_sensor": {
+      "total_injected": 64,
+      "detected": 41,
+      "missed": 23,
+      "detection_rate_pct": 64.1,
+      "predicted_classifications": {
+        "PROBABLE_SENSOR_ANOMALY": 41,
+        "NORMAL": 14,
+        "POSSIBLE_GENUINE_WEATHER_EVENT": 9
+      }
+    },
+    "genuine_weather_event": {
+      "total_injected": 22,
+      "detected": 1,
+      "missed": 21,
+      "detection_rate_pct": 4.5,
+      "predicted_classifications": {
+        "POSSIBLE_GENUINE_WEATHER_EVENT": 21,
+        "PROBABLE_SENSOR_ANOMALY": 1
+      }
+    },
+    "humidity_spike": {
+      "total_injected": 4,
+      "detected": 4,
+      "missed": 0,
+      "detection_rate_pct": 100.0,
+      "predicted_classifications": {
+        "PROBABLE_SENSOR_ANOMALY": 4
+      }
+    },
+    "missing_telemetry": {
+      "total_injected": 18,
+      "detected": 15,
+      "missed": 3,
+      "detection_rate_pct": 83.3,
+      "predicted_classifications": {
+        "POSSIBLE_COMMUNICATION_FAILURE": 9,
+        "POSSIBLE_DATA_QUALITY_ISSUE": 6,
+        "POSSIBLE_GENUINE_WEATHER_EVENT": 3
+      }
+    },
+    "multivariate_inconsistency": {
+      "total_injected": 16,
+      "detected": 11,
+      "missed": 5,
+      "detection_rate_pct": 68.8,
+      "predicted_classifications": {
+        "PROBABLE_SENSOR_ANOMALY": 11,
+        "POSSIBLE_GENUINE_WEATHER_EVENT": 5
+      }
+    },
+    "normal": {
+      "total_injected": 796,
+      "detected": 242,
+      "missed": 554,
+      "detection_rate_pct": 30.4,
+      "predicted_classifications": {
+        "POSSIBLE_GENUINE_WEATHER_EVENT": 330,
+        "PROBABLE_SENSOR_ANOMALY": 242,
+        "NORMAL": 224
+      }
+    },
+    "pressure_spike": {
+      "total_injected": 4,
+      "detected": 4,
+      "missed": 0,
+      "detection_rate_pct": 100.0,
+      "predicted_classifications": {
+        "PROBABLE_SENSOR_ANOMALY": 4
+      }
+    },
+    "sensor_drift": {
+      "total_injected": 72,
+      "detected": 8,
+      "missed": 64,
+      "detection_rate_pct": 11.1,
+      "predicted_classifications": {
+        "POSSIBLE_GENUINE_WEATHER_EVENT": 40,
+        "NORMAL": 24,
+        "PROBABLE_SENSOR_ANOMALY": 8
+      }
+    },
+    "temperature_spike": {
+      "total_injected": 4,
+      "detected": 4,
+      "missed": 0,
+      "detection_rate_pct": 100.0,
+      "predicted_classifications": {
+        "PROBABLE_SENSOR_ANOMALY": 4
+      }
+    }
+  },
+  "sensor_type_breakdown": {
+    "all": {
+      "total_injected": 18,
+      "detected": 15,
+      "detection_rate_pct": 83.3
+    },
+    "humidity": {
+      "total_injected": 46,
+      "detected": 23,
+      "detection_rate_pct": 50.0
+    },
+    "pressure": {
+      "total_injected": 38,
+      "detected": 9,
+      "detection_rate_pct": 23.7
+    },
+    "temperature": {
+      "total_injected": 80,
+      "detected": 40,
+      "detection_rate_pct": 50.0
+    }
+  },
+  "genuine_weather_event_evaluation": {
+    "total_genuine_weather_samples": 22,
+    "correct_genuine_event_classifications": 21,
+    "correct_genuine_event_pct": 95.45,
+    "incorrect_sensor_anomaly_classifications": 1,
+    "false_alarm_rate_pct": 4.55,
+    "classified_as_normal": 0
+  },
+  "limitations_notice": "These metrics reflect controlled anomaly-injection evaluation across synthetic/injected scenarios on valid baseline data, NOT unbounded real-world accuracy."
+}

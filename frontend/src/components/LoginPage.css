@@ -1,0 +1,967 @@
+/* =========================================================
+   SKYGUARD AI LOGIN
+========================================================= */
+
+.skyguard-login {
+  min-height: 100vh;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 1.35fr 0.75fr;
+
+  background:
+    radial-gradient(
+      circle at 15% 50%,
+      rgba(15, 100, 180, 0.16),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #030b17 0%,
+      #07182c 50%,
+      #0a1c32 100%
+    );
+
+  color: #ffffff;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   LEFT SIDE
+========================================================= */
+
+.skyguard-hero {
+  position: relative;
+
+  min-height: 100vh;
+
+  padding: 45px 65px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  overflow: hidden;
+}
+
+
+/* Background glow */
+
+.hero-glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(10px);
+
+  pointer-events: none;
+}
+
+.hero-glow-one {
+  width: 500px;
+  height: 500px;
+
+  right: -150px;
+  top: 20%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(28, 143, 255, 0.16),
+      transparent 70%
+    );
+}
+
+.hero-glow-two {
+  width: 350px;
+  height: 350px;
+
+  left: -150px;
+  bottom: -100px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(86, 67, 255, 0.1),
+      transparent 70%
+    );
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.skyguard-brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  position: relative;
+  z-index: 2;
+}
+
+.brand-shield {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 15px;
+
+  color: #35a9ff;
+
+  border: 1px solid rgba(50, 170, 255, 0.65);
+
+  background:
+    rgba(25, 135, 225, 0.08);
+
+  box-shadow:
+    0 0 35px rgba(25, 140, 255, 0.13);
+}
+
+.skyguard-brand h2 {
+  margin: 0;
+
+  font-size: 24px;
+
+  letter-spacing: 1px;
+}
+
+.skyguard-brand h2 span {
+  color: #2ca8ff;
+}
+
+.skyguard-brand p {
+  margin: 3px 0 0;
+
+  color: #7897b7;
+
+  font-size: 12px;
+
+  letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   HERO MAIN
+========================================================= */
+
+.hero-main {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 720px;
+
+  margin-top: 30px;
+}
+
+.live-status {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 8px 13px;
+
+  margin-bottom: 22px;
+
+  border-radius: 30px;
+
+  border: 1px solid rgba(35, 175, 255, 0.22);
+
+  background: rgba(25, 120, 200, 0.07);
+
+  color: #54baff;
+
+  font-size: 10px;
+
+  letter-spacing: 1.2px;
+
+  font-weight: 700;
+}
+
+.live-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #22d3a7;
+
+  box-shadow:
+    0 0 12px #22d3a7;
+}
+
+.hero-main h1 {
+  margin: 0;
+
+  font-size: clamp(42px, 4.4vw, 67px);
+
+  line-height: 1.05;
+
+  letter-spacing: -2px;
+
+  font-weight: 750;
+}
+
+.hero-main h1 span {
+  color: #2daaff;
+
+  text-shadow:
+    0 0 35px rgba(45, 170, 255, 0.18);
+}
+
+.hero-text {
+  max-width: 610px;
+
+  margin: 28px 0 0;
+
+  color: #91acc8;
+
+  font-size: 17px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   WEATHER VISUAL
+========================================================= */
+
+.weather-visual {
+  margin-top: 35px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+
+  max-width: 600px;
+}
+
+.weather-circle {
+  width: 85px;
+  height: 85px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #43b5ff;
+
+  border: 1px solid rgba(55, 170, 255, 0.35);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(30, 150, 255, 0.16),
+      rgba(20, 100, 180, 0.03)
+    );
+
+  box-shadow:
+    0 0 45px rgba(20, 140, 255, 0.1);
+}
+
+.weather-line {
+  height: 1px;
+
+  width: 60px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(50, 170, 255, 0.5),
+      transparent
+    );
+}
+
+.weather-data {
+  display: flex;
+
+  gap: 28px;
+}
+
+.weather-data div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.weather-data span {
+  color: #6684a2;
+
+  font-size: 10px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.7px;
+}
+
+.weather-data strong {
+  color: #d9eaff;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   FOUR PILLARS
+========================================================= */
+
+.skyguard-pillars {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 20px;
+
+  position: relative;
+
+  z-index: 2;
+
+  margin-top: 25px;
+}
+
+.skyguard-pillar {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+.pillar-icon {
+  width: 45px;
+  height: 45px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.03);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.pillar-icon svg {
+  width: 21px;
+}
+
+.skyguard-pillar strong {
+  display: block;
+
+  font-size: 14px;
+}
+
+.skyguard-pillar p {
+  margin: 4px 0 0;
+
+  color: #6e8ca9;
+
+  font-size: 10px;
+
+  line-height: 1.4;
+}
+
+.pillar-blue .pillar-icon {
+  color: #35a9ff;
+}
+
+.pillar-green .pillar-icon {
+  color: #21d5ad;
+}
+
+.pillar-orange .pillar-icon {
+  color: #ffb52e;
+}
+
+.pillar-purple .pillar-icon {
+  color: #a375ff;
+}
+
+
+/* =========================================================
+   HERO FOOTER
+========================================================= */
+
+.hero-footer {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: #52718f;
+
+  font-size: 11px;
+
+  letter-spacing: 0.4px;
+}
+
+
+/* =========================================================
+   RIGHT AUTH
+========================================================= */
+
+.skyguard-auth {
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 40px;
+}
+
+
+/* =========================================================
+   AUTH CARD
+========================================================= */
+
+.auth-card {
+  width: min(450px, 100%);
+
+  padding: 43px;
+
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(16, 38, 66, 0.96),
+      rgba(5, 19, 36, 0.97)
+    );
+
+  border: 1px solid rgba(70, 160, 235, 0.25);
+
+  box-shadow:
+    0 35px 90px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+
+  backdrop-filter: blur(20px);
+}
+
+
+/* Auth icon */
+
+.auth-icon {
+  width: 68px;
+  height: 68px;
+
+  margin: 0 auto 22px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 18px;
+
+  color: #3eafff;
+
+  border: 1px solid rgba(55, 170, 255, 0.45);
+
+  background: rgba(30, 145, 230, 0.08);
+
+  box-shadow:
+    0 0 40px rgba(30, 150, 255, 0.12);
+}
+
+
+/* Heading */
+
+.auth-card h2 {
+  margin: 0;
+
+  text-align: center;
+
+  font-size: 29px;
+
+  letter-spacing: -0.5px;
+}
+
+.auth-card h2 span {
+  color: #38abff;
+}
+
+.auth-description {
+  margin: 11px auto 20px;
+
+  max-width: 320px;
+
+  text-align: center;
+
+  color: #7896b5;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+
+/* Security badge */
+
+.security-badge {
+  width: fit-content;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 7px 12px;
+
+  border-radius: 20px;
+
+  background: rgba(25, 190, 150, 0.07);
+
+  border: 1px solid rgba(30, 210, 170, 0.18);
+
+  color: #52d9b9;
+
+  font-size: 10px;
+}
+
+.security-dot {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #25d6ad;
+
+  box-shadow: 0 0 8px #25d6ad;
+}
+
+
+/* Divider */
+
+.auth-divider {
+  height: 1px;
+
+  margin: 28px 0;
+
+  background:
+    rgba(120, 170, 210, 0.12);
+}
+
+.continue-label {
+  text-align: center;
+
+  color: #819db8;
+
+  font-size: 12px;
+
+  margin: 0 0 16px;
+}
+
+
+/* =========================================================
+   GOOGLE
+========================================================= */
+
+/* .google-container {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+
+  overflow: hidden;
+
+  border-radius: 10px;
+} */
+.google-container {
+  width: 100%;
+  min-height: 44px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 4px;
+}
+
+#google-signin-btn {
+  min-height: 44px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.google-signin {
+  min-height: 44px;
+
+  display: flex;
+
+  justify-content: center;
+}
+
+
+/* =========================================================
+   CONFIG NOTICE
+========================================================= */
+
+.auth-config-notice {
+  padding: 15px;
+
+  border-radius: 12px;
+
+  border: 1px solid rgba(245, 170, 40, 0.25);
+
+  background: rgba(245, 170, 40, 0.06);
+
+  color: #c3d2e2;
+}
+
+.auth-config-notice strong {
+  display: block;
+
+  color: #ffbb3c;
+
+  font-size: 12px;
+
+  margin-bottom: 6px;
+}
+
+.auth-config-notice p {
+  margin: 0;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+
+  color: #7e9ab7;
+}
+
+.auth-config-notice code {
+  color: #52b7ff;
+
+  font-family: monospace;
+}
+
+
+/* =========================================================
+   OR
+========================================================= */
+
+.auth-or {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin: 20px 0;
+}
+
+.auth-or span {
+  flex: 1;
+
+  height: 1px;
+
+  background: rgba(120, 170, 210, 0.14);
+}
+
+.auth-or p {
+  margin: 0;
+
+  color: #5e7a96;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   DEMO BUTTON
+========================================================= */
+
+.demo-login {
+  width: 100%;
+
+  min-height: 64px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 10px 15px;
+
+  border-radius: 13px;
+
+  border: 1px solid rgba(55, 157, 255, 0.3);
+
+  background:
+    linear-gradient(
+      100deg,
+      rgba(24, 142, 230, 0.16),
+      rgba(105, 76, 230, 0.14)
+    );
+
+  color: white;
+
+  cursor: pointer;
+
+  text-align: left;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.demo-login:hover {
+  transform: translateY(-2px);
+
+  border-color: rgba(65, 175, 255, 0.6);
+
+  background:
+    linear-gradient(
+      100deg,
+      rgba(24, 142, 230, 0.25),
+      rgba(105, 76, 230, 0.22)
+    );
+}
+
+.demo-icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 10px;
+
+  color: #53b5ff;
+
+  background: rgba(45, 160, 255, 0.1);
+}
+
+.demo-text {
+  flex: 1;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.demo-text strong {
+  font-size: 13px;
+}
+
+.demo-text small {
+  color: #7291ad;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   DEMO NOTICE
+========================================================= */
+
+.demo-notice {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 12px;
+
+  margin-top: 17px;
+
+  padding: 15px;
+
+  border-radius: 12px;
+
+  background: rgba(40, 130, 210, 0.05);
+
+  border: 1px solid rgba(50, 140, 220, 0.12);
+}
+
+.demo-notice > svg {
+  flex-shrink: 0;
+
+  color: #3eaaff;
+
+  margin-top: 1px;
+}
+
+.demo-notice strong {
+  display: block;
+
+  color: #a9c9e7;
+
+  font-size: 11px;
+
+  margin-bottom: 4px;
+}
+
+.demo-notice p {
+  margin: 0;
+
+  color: #67839e;
+
+  font-size: 10px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   AUTH FOOTER
+========================================================= */
+
+.auth-footer {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 28px;
+}
+
+.auth-footer span {
+  height: 1px;
+
+  flex: 1;
+
+  background: rgba(70, 140, 200, 0.12);
+}
+
+.auth-footer p {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  margin: 0;
+
+  color: #50708e;
+
+  font-size: 9px;
+
+  white-space: nowrap;
+}
+
+.auth-footer svg {
+  color: #398fcb;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .skyguard-login {
+    grid-template-columns: 1fr;
+  }
+
+  .skyguard-hero {
+    min-height: auto;
+
+    padding: 40px 50px 30px;
+  }
+
+  .hero-main {
+    margin-top: 70px;
+
+    margin-bottom: 60px;
+  }
+
+  .skyguard-auth {
+    min-height: auto;
+
+    padding: 30px 50px 60px;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .skyguard-hero {
+    padding: 30px 25px;
+  }
+
+  .hero-main {
+    margin-top: 50px;
+  }
+
+  .hero-main h1 {
+    font-size: 42px;
+
+    letter-spacing: -1px;
+  }
+
+  .hero-text {
+    font-size: 14px;
+  }
+
+  .weather-visual {
+    display: none;
+  }
+
+  .skyguard-pillars {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+  }
+
+  .skyguard-auth {
+    padding: 20px;
+  }
+
+  .auth-card {
+    padding: 32px 22px;
+  }
+
+}

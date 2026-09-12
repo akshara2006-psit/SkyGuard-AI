@@ -1,0 +1,81 @@
+{
+  "status": "completed",
+  "evaluation_timestamp": "2026-09-10T14:53:48.242853",
+  "dataset": "benchmark_dataset_with_ground_truth.csv",
+  "evaluated_samples": 12960,
+  "total_anomalies_injected": 282,
+  "true_positives": 271,
+  "false_positives": 8582,
+  "true_negatives": 4096,
+  "false_negatives": 11,
+  "avg_detection_latency_ms": 3.013,
+  "total_evaluation_time_sec": 39.05,
+  "metrics": {
+    "precision": 3.06,
+    "recall": 96.1,
+    "f1_score": 5.93,
+    "false_positive_rate": 67.69
+  },
+  "fault_type_breakdown": {
+    "communication_failure": {
+      "fault_category": "Communication Failure",
+      "total_injected": 36,
+      "detected": 36,
+      "missed": 0,
+      "detection_rate_pct": 100.0,
+      "precision_pct": 100.0,
+      "recall_pct": 100.0,
+      "f1_score_pct": 100.0
+    },
+    "drift": {
+      "fault_category": "Drift",
+      "total_injected": 108,
+      "detected": 104,
+      "missed": 4,
+      "detection_rate_pct": 96.3,
+      "precision_pct": 100.0,
+      "recall_pct": 96.3,
+      "f1_score_pct": 98.1
+    },
+    "frozen_sensor": {
+      "fault_category": "Frozen Sensor",
+      "total_injected": 60,
+      "detected": 53,
+      "missed": 7,
+      "detection_rate_pct": 88.3,
+      "precision_pct": 100.0,
+      "recall_pct": 88.3,
+      "f1_score_pct": 93.8
+    },
+    "possible_weather_event": {
+      "fault_category": "Possible Weather Event",
+      "total_injected": 48,
+      "detected": 48,
+      "missed": 0,
+      "detection_rate_pct": 100.0,
+      "precision_pct": 100.0,
+      "recall_pct": 100.0,
+      "f1_score_pct": 100.0
+    },
+    "pressure_spike": {
+      "fault_category": "Pressure Spike",
+      "total_injected": 12,
+      "detected": 12,
+      "missed": 0,
+      "detection_rate_pct": 100.0,
+      "precision_pct": 100.0,
+      "recall_pct": 100.0,
+      "f1_score_pct": 100.0
+    },
+    "temperature_spike": {
+      "fault_category": "Temperature Spike",
+      "total_injected": 18,
+      "detected": 18,
+      "missed": 0,
+      "detection_rate_pct": 100.0,
+      "precision_pct": 100.0,
+      "recall_pct": 100.0,
+      "f1_score_pct": 100.0
+    }
+  }
+}
