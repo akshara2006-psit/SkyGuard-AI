@@ -1,323 +1,446 @@
-::: {align="center"}
+<div align="center">
 
-🌦️ SkyGuard AI
+<img src="https://capsule-render.vercel.app/api?type=waving&height=210&text=SKYGUARD%20AI&fontSize=52&fontColor=ffffff&fontAlignY=38&desc=Intelligent%20Real-Time%20Anomaly%20Detection%20for%20Automatic%20Weather%20Stations&descAlignY=60&descSize=18&animation=fadeIn&color=0:0f172a,50:075985,100:0284c7" width="100%" alt="SkyGuard AI">
 
-Intelligent Real-Time Anomaly Detection for Automatic Weather Stations
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=19&pause=1100&color=38BDF8&center=true&vCenter=true&width=850&lines=Detect+%E2%86%92+Explain+%E2%86%92+Assess+Health+%E2%86%92+Recommend+Action;Temperature+%7C+Pressure+%7C+Relative+Humidity;Real+weather+or+sensor+failure%3F+SkyGuard+decides.;Built+for+SIH+Problem+Statement+26073" alt="SkyGuard AI animated tagline">
 
-<p>
+<br>
 
-<img src="https://img.shields.io/badge/SIH-2025%20%7C%20PS%2026073-0ea5e9?style=for-the-badge&logo=cloud&logoColor=white" alt="SIH PS 26073"/>{=html}
-<img src="https://img.shields.io/badge/AI%2FML-Anomaly%20Detection-7c3aed?style=for-the-badge" alt="AI ML"/>{=html}
-<img src="https://img.shields.io/badge/Data-NOAA%20ASOS-0284c7?style=for-the-badge" alt="NOAA ASOS"/>{=html}
-<img src="https://img.shields.io/badge/Backend-FastAPI-059669?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI"/>{=html}
-<img src="https://img.shields.io/badge/Frontend-React-06b6d4?style=for-the-badge&logo=react&logoColor=white" alt="React"/>{=html}
+<a href="https://skyguard-ai-1-2nro.onrender.com">
+<img src="https://img.shields.io/badge/%F0%9F%9A%80%20LIVE%20DEMO-0f172a?style=for-the-badge&labelColor=0284c7" alt="Live Demo">
+</a>
+<a href="https://skyguard-ai-wsf9.onrender.com">
+<img src="https://img.shields.io/badge/%E2%9A%99%EF%B8%8F%20BACKEND%20API-0f172a?style=for-the-badge&labelColor=059669" alt="Backend API">
+</a>
+<a href="https://github.com/akshara2006-psit/SkyGuard-AI">
+<img src="https://img.shields.io/badge/%F0%9F%93%A6%20SOURCE%20CODE-0f172a?style=for-the-badge&labelColor=7c3aed" alt="Source Code">
+</a>
 
-</p>
+<br><br>
 
-<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=700&size=22&pause=900&color=38BDF8&center=true&vCenter=true&width=850&lines=Detect+sensor+faults+before+they+become+bad+decisions.;Separate+real+weather+events+from+sensor+anomalies.;Monitor+Temperature+%7C+Pressure+%7C+Relative+Humidity.;From+raw+AWS+observations+to+actionable+alerts." alt="Animated tagline"/>{=html}
+<img src="https://img.shields.io/badge/SIH-PS%2026073-0284c7?style=flat-square" alt="SIH PS 26073">
+<img src="https://img.shields.io/badge/NOAA-ASOS%20Real%20Data-0891b2?style=flat-square" alt="NOAA ASOS">
+<img src="https://img.shields.io/badge/Frontend-React-06b6d4?style=flat-square&logo=react&logoColor=white" alt="React">
+<img src="https://img.shields.io/badge/Backend-FastAPI-059669?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI">
+<img src="https://img.shields.io/badge/ML-Isolation%20Forest-7c3aed?style=flat-square" alt="Isolation Forest">
 
-<br/>{=html}
+</div>
 
-SkyGuard AI turns Automatic Weather Station telemetry into an
-explainable, real-time sensor-health decision system.
+🌦️ The problem
 
-🚀 Live Demo · ⚙️ Backend
-API · 📦
-GitHub
-:::
+Automatic Weather Stations continuously produce observations that support forecasting, agriculture, disaster management, aviation and climate science.
 
-🛰️ What is SkyGuard AI?
+But an unusual observation does not automatically mean bad weather.
 
-Automatic Weather Stations (AWS) continuously provide observations used
-in forecasting, agriculture, disaster management, aviation and climate
-science. But a strange observation is not always bad data: it may be a
-genuine meteorological event, a sensor fault, a frozen value, a
-communication failure, calibration drift, or corrupted telemetry.
+It could be:
 
-SkyGuard AI is designed to answer the operational question:
+🌩️ a genuine meteorological event
 
-"Is this unusual observation real weather, or is the sensor/data
-stream failing?"
+🔧 a sensor malfunction
 
-The system focuses strictly on the three SIH PS 26073 variables:
+📈 a sudden spike
 
-Variable                Unit                    What SkyGuard watches
+🧊 a frozen value
 
-🌡️ Temperature          °C                      spikes, drift, abnormal
-behaviour
+📉 calibration drift
 
-🧭 Atmospheric Pressure hPa                     spikes,
-persistence/frozen
-behaviour, drift
+📡 communication failure
 
-✨ Why it is different
+🗃️ corrupted telemetry
 
-Traditional quality control can identify values outside simple
-thresholds. SkyGuard combines multiple evidence layers instead of
-relying on one rule.
+SkyGuard AI asks one operational question:
 
-                 ┌───────────────────────────────┐
-                 │      AWS OBSERVATIONS          │
-                 │   Temperature / Pressure / RH │
-                 └───────────────┬───────────────┘
-                                 │
-                                 ▼
-                 ┌───────────────────────────────┐
-                 │     MULTI-LAYER ANALYSIS      │
-                 │                               │
-                 │  • Isolation Forest           │
-                 │  • Temporal / spike checks    │
-                 │  • Frozen-value detection     │
-                 │  • Drift analysis             │
-                 │  • Seasonal baseline          │
-                 │  • Multivariate consistency   │
-                 │  • Spatial consistency        │
-                 └───────────────┬───────────────┘
-                                 │
-                                 ▼
-                 ┌───────────────────────────────┐
-                 │   EXPLAINABLE DECISION        │
-                 │                               │
-                 │  NORMAL                       │
-                 │  POSSIBLE GENUINE WEATHER     │
-                 │  PROBABLE SENSOR ANOMALY      │
-                 └───────────────┬───────────────┘
-                                 │
-              ┌──────────────────┼──────────────────┐
-              ▼                  ▼                  ▼
-        🚨 Alert            ❤️ Health         🔧 Action
-        Severity            Degradation       Maintenance
-        Confidence          Trend             Recommendation
+Is this unusual observation real weather — or is the sensor/data stream failing?
 
-🎯 Core capabilities
+🎯 What SkyGuard monitors
 
-🔍 Real-time anomaly detection
+Sensor variable
 
-Detects abnormal AWS observations using an ensemble of ML and
-deterministic signals.
+Unit
 
-📈 Temporal intelligence
+Detection focus
 
-Looks for: - sudden spikes - persistent/frozen values - linear sensor
-drift - missing telemetry
+🌡️ Temperature
 
-🌦️ Genuine-weather discrimination
+°C
 
-A coordinated change across meteorological variables can be treated
-differently from an isolated sensor failure.
+Spikes · Drift · Temporal anomalies
 
-🧩 Multivariate consistency
+🧭 Atmospheric Pressure
 
-Temperature, pressure and humidity are evaluated together rather than
-independently.
+hPa
 
-🗺️ Spatial consistency
+Spikes · Frozen values · Drift
 
-Nearby stations can provide supporting evidence when observations are
-available at comparable timestamps.
+💧 Relative Humidity
 
-🧠 Explainable decisions
+%
 
-Each anomaly can expose evidence such as: - anomaly score - temporal
-flags - multivariate evidence - spatial consistency - observed vs
-expected values - feature attribution / decision-path evidence
+Spikes · Frozen values · Drift
 
-❤️ Sensor health
+The implementation stays within the three variables specified by SIH PS 26073.
 
-SkyGuard maintains a health index and degradation trend to help
-prioritize maintenance.
+🧠 How it works
 
-🔧 Corrected / imputed values
+       AWS TELEMETRY
+   T / P / RH observations
+             │
+             ▼
+   ┌─────────────────────┐
+   │ Validation &        │
+   │ Preprocessing       │
+   └──────────┬──────────┘
+              │
+      ┌───────┼────────┐
+      ▼       ▼        ▼
+  Isolation  Temporal  Seasonal
+   Forest    Analysis  Baseline
+      │       │        │
+      └───────┼────────┘
+              ▼
+      Multivariate
+       Consistency
+              │
+              ▼
+      Spatial Consistency
+              │
+              ▼
+     ┌─────────────────┐
+     │ Cause Classifier│
+     └────────┬────────┘
+              │
+       ┌──────┼───────┐
+       ▼      ▼       ▼
+    NORMAL  WEATHER  SENSOR
+            EVENT     FAULT
+       │      │       │
+       └──────┼───────┘
+              ▼
+   Confidence + Evidence
+              │
+       ┌──────┴──────┐
+       ▼             ▼
+   🚨 Alerts      ❤️ Health
+       │             │
+       └──────┬──────┘
+              ▼
+      🔧 Recommended Action
 
-Where supported by available evidence, the system can produce query-time
-corrected values while keeping the raw observation immutable.
+✨ What makes it different
 
-🧪 Fault simulation
+SkyGuard is not simply a threshold checker.
 
-Built-in scenarios demonstrate: - Normal - Temperature spike - Frozen
-humidity - Sensor drift - Communication failure - Genuine weather
-event - Multivariate inconsistency
+It combines several evidence layers and turns them into an actionable sensor-health decision.
 
-📡 Real-world data
+🔍 Multi-layer detection
 
-SkyGuard includes a real-data ingestion path for the NOAA/NCEI
-5-Minute Surface Weather Observations from the ASOS Network.
+Isolation Forest
+Finds observations that look unusual compared with learned patterns.
 
-Current integrated prototype data:
+Temporal analysis
+Looks for spikes, persistence/frozen values, drift and missing telemetry.
 
-8 NOAA ASOS stations
+Seasonal baseline
+Accounts for hour-of-day and meteorological season before judging an observation.
 
-13,756 real-world NOAA observations
+Multivariate consistency
+Checks whether temperature, pressure and humidity behave coherently together.
 
-5-minute observation source
+Spatial consistency
+Uses observations from comparable nearby stations as supporting evidence.
 
-Temperature, pressure and relative humidity derived/handled by the
-ingestion adapter
+Cause classification
+Converts the combined evidence into:
 
-Missing-value handling
+NORMAL · POSSIBLE GENUINE WEATHER EVENT · PROBABLE SENSOR ANOMALY
 
-Raw source caching and provenance documentation
+🛰️ Real-world NOAA data
 
-Example integrated stations include:
+SkyGuard includes an ingestion adapter for the NOAA/NCEI 5-Minute Surface Weather Observations from the ASOS Network.
+
+Current integrated data
+
+
+
+
+
+🌐 NOAA stations
+
+8
+
+📡 NOAA observations
+
+13,756
+
+🏠 Simulation stations
+
+6
+
+🛰️ Total dashboard stations
+
+14
+
+📍 Observation interval
+
+5 minutes
+
+NOAA stations currently represented include:
 
 KATL · KBOS · KDEN · KDFW · KJFK · KLAX · KORD · KSFO
 
-The production prototype also retains 6 simulation stations, giving
-the deployed dashboard 14 stations in total.
+The real-data path is kept separate from the simulation network so the dashboard can distinguish NOAA ASOS observations from simulation data.
 
-🖥️ Live dashboard
+🖥️ Dashboard
 
-::: {align="center"}
-<img src="docs/assets/dashboard.png" alt="SkyGuard AI live dashboard" width="95%"/>{=html}
-:::
+<div align="center">
 
-Tip: Add your latest dashboard screenshot at
-docs/assets/dashboard.png to display it here. The screenshot should
-show the live Overview page with the station cards and alert center.
+Overview
 
-Dashboard includes
+<img src="docs/assets/dashboard.png" width="94%" alt="SkyGuard AI Dashboard">
 
-Overview · Stations · Alerts · Analytics ·
-Simulation · About
+</div>
 
-The live dashboard currently displays the deployed network, station
-health, alerts and anomaly evidence.
+Built-in views
 
-📊 Evaluation
+View
 
-SkyGuard includes a separate controlled evaluation pipeline using
-deterministic fault injection rather than claiming performance from
-unlabeled real-world observations.
+Purpose
 
-Controlled evaluation --- 1,000 observations
+📊 Overview
 
-Metric                                         Result
+Network health, anomalies and active alerts
 
-Precision                                  26.36%
-Recall                                     47.80%
-F1 Score                                   33.98%
-False Positive Rate                        29.71%
-False Negative Rate                        52.20%
-Genuine-weather discrimination     95.45% (21/22)
+🛰️ Stations
 
-Category-level detection
+Station-level telemetry and health
 
-Fault category                           Detection
+🚨 Alerts
 
-Temperature spikes                4/4 --- 100%
-Pressure spikes                   4/4 --- 100%
-Humidity spikes                   4/4 --- 100%
-Missing telemetry              15/18 --- 83.3%
-Multivariate inconsistency     11/16 --- 68.8%
-Frozen values                  41/64 --- 64.1%
-Drift injections                8/72 --- 11.1%
+Severity, evidence and recommended action
 
-Important: These are controlled evaluation results on an injected
-dataset, not a claim that SkyGuard has this accuracy on all real-world
-weather observations. Real NOAA observations do not provide complete
-ground-truth fault labels.
+📈 Analytics
 
-⚡ Performance
+Model benchmark and performance information
 
-The real-time inference benchmark measured:
+🧪 Simulation
 
-Benchmark                                           Result
+Controlled fault scenarios
 
-Single observation --- mean                   63.55 ms
-Single observation --- P95                    76.24 ms
-Single observation --- P99                    84.34 ms
-Batch 50                         45.6 observations/sec
-Batch 100                        45.8 observations/sec
-Batch 200                        40.7 observations/sec
-Peak inference heap overhead                   0.47 MB
+ℹ️ About
 
-The pipeline is designed for incremental/stateless observation
-processing, making it suitable for deployment behind a streaming or
-gateway layer.
+SIH problem, mission and system information
 
-🧠 Machine-learning pipeline
+🚨 Fault scenarios
 
-Raw telemetry
-     │
-     ▼
-Validation & preprocessing
-     │
-     ├──────────────► Isolation Forest
-     │
-     ├──────────────► Temporal analysis
-     │                    ├─ Z-score spikes
-     │                    ├─ Frozen values
-     │                    └─ Drift
-     │
-     ├──────────────► Seasonal baseline
-     │
-     ├──────────────► Multivariate consistency
-     │
-     └──────────────► Spatial consistency
-                            │
-                            ▼
-                    Cause classification
-                            │
-             ┌──────────────┼──────────────┐
-             ▼              ▼              ▼
-          NORMAL       WEATHER EVENT    SENSOR FAULT
-                            │
-                            ▼
-              Confidence + Explanation
-                            │
-                 ┌──────────┴──────────┐
-                 ▼                     ▼
-            Alert engine          Sensor health
+The simulation module demonstrates the complete detection pipeline:
 
-🧰 Technology stack
+NORMAL
+   ↓
+TEMPERATURE SPIKE
+   ↓
+FROZEN HUMIDITY
+   ↓
+SENSOR DRIFT
+   ↓
+COMMUNICATION FAILURE
+   ↓
+GENUINE WEATHER EVENT
+   ↓
+MULTIVARIATE INCONSISTENCY
 
-Frontend
+Each scenario passes through the same analysis pipeline rather than being a UI-only animation.
 
-React
+📊 Controlled evaluation
 
-Vite
+SkyGuard contains a separate controlled evaluation pipeline with deterministic fault injection.
 
-Recharts
+The benchmark uses 1,000 observations:
 
-Lucide React
+182 injected sensor anomalies
 
-Axios
+22 genuine-weather cases
 
-Backend
+796 clean normal observations
 
-Python
+Results
 
-FastAPI
+Metric
 
-SQLAlchemy
+Result
+
+Precision
+
+26.36%
+
+Recall
+
+47.80%
+
+F1 Score
+
+33.98%
+
+False Positive Rate
+
+29.71%
+
+False Negative Rate
+
+52.20%
+
+Genuine-weather discrimination
+
+95.45% (21/22)
+
+Detection by fault category
+
+Fault
+
+Result
+
+🌡️ Temperature spikes
+
+4/4 · 100%
+
+🧭 Pressure spikes
+
+4/4 · 100%
+
+💧 Humidity spikes
+
+4/4 · 100%
+
+📡 Missing telemetry
+
+15/18 · 83.3%
+
+🔗 Multivariate inconsistency
+
+11/16 · 68.8%
+
+🧊 Frozen values
+
+41/64 · 64.1%
+
+📉 Drift injections
+
+8/72 · 11.1%
+
+Important: these are controlled evaluation results. They are not presented as universal real-world accuracy. Unlabeled NOAA observations are not treated as ground truth.
+
+⚡ Real-time performance
+
+Test
+
+Measured result
+
+Single observation · mean
+
+63.55 ms
+
+Single observation · P95
+
+76.24 ms
+
+Single observation · P99
+
+84.34 ms
+
+Batch of 50
+
+45.6 obs/sec
+
+Batch of 100
+
+45.8 obs/sec
+
+Batch of 200
+
+40.7 obs/sec
+
+Peak inference heap overhead
+
+0.47 MB
+
+❤️ Sensor health
+
+SkyGuard does not stop at saying “anomaly detected.”
+
+It maintains a sensor-health view using:
+
+anomaly evidence
+
+missing telemetry
+
+detected fault signals
+
+degradation trend
+
+recent behaviour
+
+maintenance recommendations
+
+This turns anomaly detection into an operational decision-support system.
+
+🔬 Explainability
+
+For every important anomaly, SkyGuard can expose evidence such as:
+
+Observed value
+      ↓
+Expected / baseline value
+      ↓
+Anomaly score
+      ↓
+Temporal evidence
+      ↓
+Multivariate evidence
+      ↓
+Spatial evidence
+      ↓
+Seasonal evidence
+      ↓
+Feature attribution
+      ↓
+Cause + confidence
+      ↓
+Recommended action
+
+The current implementation uses model decision-path feature attribution rather than claiming a formal SHAP implementation.
+
+🛠️ Technology
+
+<div align="center">
+
+Layer
+
+Technology
+
+🎨 Frontend
+
+React · Vite · Recharts · Lucide React
+
+⚙️ Backend
+
+Python · FastAPI · SQLAlchemy · Pydantic
+
+🧠 ML
+
+scikit-learn · Isolation Forest · NumPy · pandas
+
+🗄️ Database
 
 SQLite
 
-Pydantic
+🌐 Real data
 
-AI / ML
+NOAA/NCEI ASOS
 
-scikit-learn
+🚀 Deployment
 
-Isolation Forest
+GitHub · Render
 
-NumPy
-
-pandas
-
-Temporal anomaly analysis
-
-Seasonal baselines
-
-Multivariate consistency analysis
-
-Spatial consistency analysis
-
-Deployment
-
-Render
-
-GitHub
+</div>
 
 📁 Project structure
 
@@ -330,14 +453,12 @@ SkyGuard-AI/
 │   │   ├── ml/
 │   │   ├── models/
 │   │   ├── services/
-│   │   ├── config.py
 │   │   ├── database/
 │   │   └── main.py
 │   │
 │   ├── data/
 │   │   ├── evaluation/
 │   │   └── noaa_asos/
-│   │
 │   ├── scripts/
 │   ├── tests/
 │   └── requirements.txt
@@ -346,8 +467,7 @@ SkyGuard-AI/
 │   ├── src/
 │   │   ├── components/
 │   │   ├── pages/
-│   │   ├── services/
-│   │   └── App.jsx
+│   │   └── services/
 │   ├── package.json
 │   └── vite.config.js
 │
@@ -357,17 +477,13 @@ SkyGuard-AI/
 │
 ├── data/
 ├── PROJECT_STATUS.md
+├── SIH_READINESS_AUDIT.md
 ├── README.md
 └── .gitignore
 
 🚀 Run locally
 
-1. Clone
-
-git clone https://github.com/akshara2006-psit/SkyGuard-AI.git
-cd SkyGuard-AI
-
-2. Backend
+1. Start the backend
 
 cd backend
 pip install -r requirements.txt
@@ -377,7 +493,7 @@ Backend:
 
 http://127.0.0.1:8000
 
-3. Frontend
+2. Start the frontend
 
 Open another terminal:
 
@@ -389,160 +505,176 @@ Frontend:
 
 http://localhost:5173
 
-For local Google authentication, configure the frontend environment
-variable:
+3. Environment variables
 
-VITE_GOOGLE_CLIENT_ID=your_google_web_client_id
 VITE_API_BASE_URL=http://localhost:8000/api
+VITE_GOOGLE_CLIENT_ID=your_google_web_client_id
 
-For the deployed frontend, VITE_API_BASE_URL should point to the
-deployed backend API.
+🌍 Live deployment
 
-🌐 Deployed architecture
+<div align="center">
 
-                         INTERNET
-                            │
-                            ▼
-              ┌─────────────────────────┐
-              │   React / Vite Frontend  │
-              │        Render            │
-              └────────────┬────────────┘
-                           │ HTTPS / REST
-                           ▼
-              ┌─────────────────────────┐
-              │      FastAPI Backend     │
-              │         Render           │
-              └────────────┬────────────┘
-                           │
-              ┌────────────┼─────────────┐
-              ▼            ▼             ▼
-          SQLite DB     ML Pipeline    NOAA Adapter
-              │            │             │
-              ▼            ▼             ▼
-          Stations      Decisions     ASOS Data
-          Alerts        Evidence      Real Data
-          Health
+🚀 SkyGuard AI is deployed
 
-🔐 Authentication
+Frontend
 
-The web dashboard supports Google Sign-In through Google Identity
-Services, with a Demo Mode fallback for development/testing.
+https://skyguard-ai-1-2nro.onrender.com
 
-For production OAuth configuration, the deployed Render hostname must be
-registered as an authorized JavaScript origin for the same Web OAuth
-client ID used by the frontend.
+Backend
 
-📚 Research & references
+https://skyguard-ai-wsf9.onrender.com
 
-SkyGuard's design is informed by established meteorological
-quality-control and anomaly-detection research.
+Source
 
-World Meteorological Organization (WMO) --- World Meteorological
-Day 2026: observing systems and surface observations
-https://public.wmo.int/site/world-meteorological-day-2026/how-does-observing-system-work
+https://github.com/akshara2006-psit/SkyGuard-AI
 
-WMO --- Recognition criteria for meteorological observing
-stations and quality control
-https://public.wmo.int/recognition-criteria-meteorological-observing-stations
+</div>
 
-WMO WDQMS --- WIGOS Data Quality Monitoring System
-https://wdqms.wmo.int/about
-
-Estévez, J. et al. (2011), Guidelines on validation procedures for
-meteorological data from automatic weather stations, Journal of
-Hydrology.
-DOI: https://doi.org/10.1016/j.jhydrol.2011.02.031
-
-Liu, F. T., Ting, K. M., & Zhou, Z.-H. (2008), Isolation Forest,
-IEEE ICDM.
-DOI: https://doi.org/10.1109/ICDM.2008.17
-
-Chandola, V., Banerjee, A., & Kumar, V. (2009), Anomaly Detection:
-A Survey, ACM Computing Surveys.
-DOI: https://doi.org/10.1145/1541880.1541882
-
-Patro, S. & Bartakke (2025), AWS quality-control study in Pune
-District.
-DOI: https://doi.org/10.1109/ICORT64008.2025.11115447
-
-🎯 SIH PS 26073 alignment
+🎯 SIH PS 26073
 
 Problem Statement: 26073
-Title: AI/ML-Based Intelligent Anomaly Detection for Automatic
-Weather Stations
 Organization: Ministry of Earth Sciences
 
-SIH requirement               SkyGuard implementation
+SIH requirement
 
-Temperature / Pressure / RH   ✅ Strict three-variable scope
-Real-time detection           ✅ REST + simulation streaming
-Spikes                        ✅
-Frozen values                 ✅
-Communication failures        ✅
-Sensor drift                  ✅
-Temporal patterns             ✅
-Seasonal/diurnal baseline     ✅
-Multivariate consistency      ✅
-Spatial consistency           ✅
-Genuine weather vs fault      ✅
-Severity & confidence         ✅
-Explainability                ✅ Decision-path evidence
-Root-cause classification     ✅
-Sensor health                 ✅
-Maintenance guidance          ✅
-Corrected values              ✅ Optional
-Real-world data               ✅ NOAA ASOS
-Simulation                    ✅ Controlled fault scenarios
-Dashboard                     ✅ React dashboard
+SkyGuard implementation
 
-⚠️ Current limitations
+Temperature / Pressure / RH
 
-SkyGuard is an executable prototype and documents its limitations rather
-than hiding them.
+✅
 
-The controlled evaluation uses injected labels; unlabeled real NOAA
-data is not treated as ground truth.
+Real-time anomaly detection
 
-Drift detection is currently weaker than spike/frozen-value
-detection in the controlled benchmark.
+✅
 
-The current spatial analysis uses a configurable implementation
-radius and should not be interpreted as a universal meteorological
-neighbourhood rule.
+Sensor spikes
 
-External SMS/email/webhook alert delivery is not part of the current
-prototype.
+✅
 
-Native ESP32 firmware and physical power measurements are future
-deployment work.
+Frozen values
 
-The current deployment uses a single Render service/database
-architecture rather than a distributed Kafka/Celery-style production
-cluster.
+✅
 
-Feature attribution uses model decision-path evidence; a formal SHAP
-dependency is not required for the current implementation.
+Communication failures
 
-🏆 The bigger vision
+✅
 
-SkyGuard AI is built around a larger idea:
+Sensor drift
 
-A weather observation network should not only report measurements
---- it should understand when those measurements can be trusted.
+✅
 
-The long-term vision is a self-aware, self-healing weather observation
-network that can:
+Temporal analysis
 
-Detect → Explain → Assess health → Recommend action → Recover
+✅
 
-::: {align="center"}
+Seasonal / diurnal baseline
 
-🌤️ From weather observations to trustworthy intelligence.
+✅
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f172a,50:0369a1,100:38bdf8&height=120&section=footer&animation=fadeIn" alt="SkyGuard footer"/>{=html}
+Multivariate consistency
 
-Built for Smart India Hackathon · Problem Statement 26073
+✅
 
-⭐ If SkyGuard AI is useful or interesting, consider starring the
-repository.
-:::
+Spatial consistency
+
+✅
+
+Genuine weather discrimination
+
+✅
+
+Severity
+
+✅
+
+Confidence
+
+✅
+
+Explainability
+
+✅
+
+Root-cause classification
+
+✅
+
+Sensor health
+
+✅
+
+Maintenance recommendation
+
+✅
+
+Optional corrected values
+
+✅
+
+NOAA real-world data
+
+✅
+
+Controlled simulation
+
+✅
+
+Executable deployment
+
+✅
+
+⚠️ Engineering limitations
+
+SkyGuard is intentionally documented with measured limitations rather than overstating the prototype.
+
+Drift detection is weaker than spike detection in the controlled benchmark.
+
+Complete ground-truth labels are unavailable for the real NOAA observations.
+
+External SMS/email/webhook alert delivery is not included in the current prototype.
+
+Native ESP32 firmware and physical energy measurements remain deployment extensions.
+
+The current deployment is a single-service prototype architecture rather than a distributed Kafka/Celery production cluster.
+
+Explainability currently uses decision-path feature attribution rather than a formal SHAP dependency.
+
+📚 Research foundation
+
+The project is informed by established meteorological quality-control approaches involving:
+
+range and validity checks
+
+temporal consistency
+
+persistence/frozen-value detection
+
+internal consistency
+
+spatial consistency
+
+automated weather-station validation
+
+machine-learning anomaly detection
+
+explainable anomaly analysis
+
+Key references include work from WMO, NOAA/NCEI, and peer-reviewed meteorological quality-control and anomaly-detection literature.
+
+🌤️ The vision
+
+<div align="center">
+
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=21&pause=1200&color=38BDF8&center=true&vCenter=true&width=800&lines=A+weather+station+should+not+only+measure.;It+should+know+when+its+measurement+can+be+trusted." alt="Animated vision">
+
+<br><br>
+
+DETECT → EXPLAIN → ASSESS HEALTH → RECOMMEND ACTION → RECOVER
+
+<br><br>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&height=120&section=footer&animation=fadeIn&color=0:0284c7,50:075985,100:0f172a" width="100%" alt="SkyGuard footer">
+
+<strong>Built for Smart India Hackathon · PS 26073 · Ministry of Earth Sciences</strong>
+
+</div>
